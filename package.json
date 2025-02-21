@@ -1,16 +1,22 @@
 {
-  "name": "emails",
+  "name": "create-emails",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
     "start": "nodemon app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+ 
+ "repository": {
+    "type": "git",
+    "url": "https://github.com/javadroid/Create-custom-emails-with-Cpanel-Nodejs"
+  },
+  "keywords": ["cpanel", "email", "api", "nodejs","automation","create email"],
+  "author": "Javadroid",
+  "license": "MIT",
   "dependencies": {
     "axios": "^1.7.7",
     "dotenv": "^16.4.7",
