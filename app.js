@@ -40,7 +40,12 @@ app.post("/create-email", async (req, res) => {
                 "Content-Type": "application/x-www-form-urlencoded"
             }
         });
-        res.json(response.data);
+
+        if(response.data.status ==1){
+            return res.json(response.data);
+        }
+
+         return res.status(405).json(response.data);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
