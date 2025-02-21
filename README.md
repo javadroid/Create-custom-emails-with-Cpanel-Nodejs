@@ -23,7 +23,9 @@ Import the package and use the `createEmailCpanel` function:
 ```typescript
 import { createEmailCpanel } from "cpanel-email-api";
 
-const auth = { username: "your-cpanel-username", password: "your-cpanel-password" };
+const auth = {
+    cpanelHost:"cpanel-host",
+   username: "your-cpanel-username", password: "your-cpanel-password" };
 
 createEmailCpanel({ domain: "example.com", email: "user", password: "password123" }, auth)
   .then(response => console.log(response))
@@ -99,6 +101,7 @@ This is a Node.js API for creating email accounts using the cPanel API.
        "domain": "example.com",
        "email": "user",
        "password": "securepassword",
+       "cpanelHost":"cpanel-host",
        "cpanelUser": "optional-cpanel-username",
        "cpanelPass": "optional-cpanel-password"
    }
