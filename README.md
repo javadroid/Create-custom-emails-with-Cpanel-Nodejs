@@ -27,7 +27,7 @@ const auth = {
     cpanelHost:"cpanel-host",
    username: "your-cpanel-username", password: "your-cpanel-password" };
 
-createEmailCpanel({ domain: "example.com", email: "user", password: "password123" }, auth)
+createEmailCpanel({ domain: "example.com", email: "user", password: "password123",quota:100 }, auth)
   .then(response => console.log(response))
   .catch(error => console.error(error));
 ```
@@ -92,7 +92,7 @@ This is a Node.js API for creating email accounts using the cPanel API.
    ```
 2. Use Postman or any HTTP client to send a `POST` request to:
    ```
-   http://localhost:3000/create-email
+   http://localhost:3000/create-email-cpanel
    ```
    
    **Request Body:**
