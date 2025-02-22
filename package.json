@@ -1,12 +1,13 @@
 {
   "name": "create-emails",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "type": "module",
+  "types": "index.d.ts",
   "scripts": {
     "build": "tsc",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

@@ -1,29 +1,32 @@
-import axios from "axios";
-import dotenv from "dotenv";
-
-dotenv.config();
-const cpanelHost = process.env.cpanelHost;
-const cpanelUsername = process.env.cpanelUsername;
-const cpanelPassword = process.env.cpanelPassword;
-
-
-export const createEmailCpanel = async ({ domain, email, password,quota }, auth) => {
-  const apiEndpoint = `https://${auth.cpanelHost}:2083/execute/Email/add_pop`;
-
-  try {
-    const response = await axios.post(
-      apiEndpoint,
-      { domain, email, password, quota: quota||100 },
-      {
-        auth,
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      }
-    );
-
-    return response.data;
-  } catch (error) {
-    throw new Error(error.message);
-  }
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
 };
-
-
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createEmailCpanel = void 0;
+const axios_1 = __importDefault(require("axios"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+const createEmailCpanel = (_a, auth_1) => __awaiter(void 0, [_a, auth_1], void 0, function* ({ domain, email, password, quota, }, auth) {
+    const apiEndpoint = `https://${auth.cpanelHost}:2083/execute/Email/add_pop`;
+    try {
+        const response = yield axios_1.default.post(apiEndpoint, { domain, email, password, quota: quota || 100 }, {
+            auth,
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        });
+        return response.data;
+    }
+    catch (error) {
+        throw new Error(error.message);
+    }
+});
+exports.createEmailCpanel = createEmailCpanel;
